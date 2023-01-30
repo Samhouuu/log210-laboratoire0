@@ -4,7 +4,7 @@ const path = require('path');
 
 let content = ""
 beforeAll(async () => {
-  const filename = path.join('test', 'routes', 'jeuRouter-redemarrerJeu-lab0.test.ts');
+  const filename = path.join('test', 'lab0', 'routes', 'jeuRouter-redemarrerJeu-lab0.test.ts');
   content = readFileSync(filename, 'utf-8');
 });
 
