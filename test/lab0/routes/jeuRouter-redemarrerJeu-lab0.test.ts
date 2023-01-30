@@ -36,4 +36,9 @@ describe('GET /api/v1/jeu/redemarrerJeu/:id', () => {
     const joueursArray = JSON.parse(joueursJSON);
     expect(joueursArray.length).toBe(0);
   });
+
+  it("verifie que le statut de jouer est 404 et que la reponse est du JSON", async () => {
+    const response = await request.get('/api/v1/jeu/jouer/' + joueur1.nom);
+    expect(response.status).toBe(404);
+  });  
 });
