@@ -107,6 +107,27 @@ export class JeuRouter {
   }
 
   /**
+   * redémarrer
+   */
+
+  public redemarrerJeu(req: Request, res: Response, next: NextFunction) {
+    try {
+      // Invoquer l'opération système (du DSS) dans le contrôleur GRASP
+      const resultat = this._controleurJeu.redemarrerJeu();
+      req.flash('Jeu redémarré');
+      res.status(200)
+        .send({
+          message: 'Success',
+          status: res.status,
+          resultat
+        });
+    } catch (error) {
+      // console.error(error);
+      this._errorCode500(error, req, res);
+    }
+  }
+
+  /**
      * Take each handler, and attach to one of the Express.Router's
      * endpoints.
      */
@@ -114,6 +135,7 @@ export class JeuRouter {
     this._router.post('/demarrerJeu', this.demarrerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     this._router.get('/jouer/:nom', this.jouer.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
     this._router.get('/terminerJeu/:nom', this.terminerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
+    this._router.get('/redemarrerJeu', this.redemarrerJeu.bind(this)); // pour .bind voir https://stackoverflow.com/a/15605064/1168342
   }
 
 }
