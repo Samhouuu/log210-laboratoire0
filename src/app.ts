@@ -72,6 +72,7 @@ class App {
           title: `${titreBase}`,
           user: user,
           // créer nouveau tableau de joueurs qui est trié par ratio
+          // https://stackoverflow.com/questions/21687907/typescript-sorting-an-array/21689268#21689268
           joueurs: joueursAvecRatio.sort((petit, grand) => grand.ratio - petit.ratio)
         });
     });

@@ -32,6 +32,7 @@ class JeuDeDes {
     -_joueurs: Map<string, Joueur>
     -_d1: De
     -_d2: De
+    -_d3: De
     +demarrerJeu(nom: string): string
     +redemarrerJeu(): void
     +jouer(nom: string): string
