@@ -33,6 +33,7 @@ class JeuDeDes {
     -_d1: De
     -_d2: De
     +demarrerJeu(nom: string): string
+    +redemarrerJeu(): void
     +jouer(nom: string): string
     +terminerJeu(nom: string): string
     +brasser(): number
@@ -47,6 +48,7 @@ class JeuRouter {
     +jouer(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction): void
     -_errorCode500(error: any, req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>): void
     +terminerJeu(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction): void
+    +redemarrerJeu(req: Request<ParamsDictionary, any, any, QueryString.ParsedQs, Record<string, any>>, res: Response<any, Record<string, any>>, next: NextFunction): void
     +init(): void
 }
 class App {
